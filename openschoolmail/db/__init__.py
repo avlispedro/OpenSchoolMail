@@ -24,6 +24,6 @@ def get_db_engine(conn_str, debug=False):
 
 
 def get_db_session(conn_str, debug=False):
-    session = sessionmaker()
-    session.configure(bind=get_db_engine(conn_str, debug))
+    sessmaker = sessionmaker(bind=get_db_engine(conn_str, debug))
+    session = sessmaker()
     return session
