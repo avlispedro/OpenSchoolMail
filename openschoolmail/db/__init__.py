@@ -12,10 +12,14 @@ from sqlalchemy.orm import sessionmaker
 BASE = declarative_base()
 from openschoolmail.db.models import Student
 from openschoolmail.db.models import Parent
+from openschoolmail.db.models import Parent_Student
+from openschoolmail.db.models import Group
+from openschoolmail.db.models import Group_Student
+from openschoolmail.db.models import Staff
 
 
 def get_db_engine(conn_str, debug=False):
-    engine = create_engine(conn_str, echo=DEBUG)
+    engine = create_engine(conn_str, echo=debug)
     return engine
 
 
@@ -23,7 +27,3 @@ def get_db_session(conn_str, debug=False):
     session = sessionmaker()
     session.configure(bind=get_db_engine(conn_str, debug))
     return session
-
-
-def init_db(conn_str, debug=True):
-    BASE.metadata.create_all(get_db_engine(conn_str, debug))
