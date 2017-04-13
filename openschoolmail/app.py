@@ -44,6 +44,9 @@ def after_request(resp):
 def create_app():
     # Register the application blueprints here...
 
+    from openschoolmail.routes.auth import AUTH
+    APP.register_blueprint(AUTH)
+
     return APP
 
 
