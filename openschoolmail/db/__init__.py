@@ -15,6 +15,7 @@ from openschoolmail.db.models import Parent
 from openschoolmail.db.models import Parent_Student
 from openschoolmail.db.models import Group
 from openschoolmail.db.models import Group_Student
+from openschoolmail.db.models import Group_Group
 from openschoolmail.db.models import Staff
 
 

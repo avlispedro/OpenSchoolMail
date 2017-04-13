@@ -44,6 +44,13 @@ class Group(BASE):
     id = Column(Integer, primary_key=True)
     group_name = Column(String(20), nullable=False)
     gs_child = relationship("Group_Student")
+    gg_child = relationship("Group_Group")
+
+
+class Group_Group(BASE):
+    __tablename__ = "group_group"
+    parent_group = Column(Integer, ForeignKey('group.id'), primary_key=True)
+    child_group = Column(Integer, ForeignKey('group.id'), primary_key=True)
 
 
 class Group_Student(BASE):
