@@ -1,0 +1,6 @@
+alembic
+bcrypt
+flask
+sqlalchemy
+pymysql
+argparse
